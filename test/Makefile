@@ -5,19 +5,19 @@ default: all
 all: ooErrorTest ooStringTest ootest
 
 ooCollection.o: ../ooCollection.c ../ooCollection.h ../ooSimple.h
-	$(CC) -ansi -c -o $@ $<
+	$(CC) -ansi -pedantic -c -o $@ $<
 
 ooString.o: ../ooString.c ../ooString.h ../ooSimple.h
-	$(CC) -ansi -c -o $@ $<
+	$(CC) -ansi -pedantic -c -o $@ $<
 
 ooErrorTest.o: ooErrorTest.c ../ooSimple.h
-	$(CC) -ansi -c -o $@ $<
+	$(CC) -ansi -pedantic -c -o $@ $<
 
 ooErrorTest: ooErrorTest.o
 	$(CC) -o $@ $^
 
 ooStringTest.o: ooStringTest.c ../ooString.h ../ooCollection.h ../ooSimple.h
-	$(CC) -ansi -c -o $@ $<
+	$(CC) -ansi -pedantic -c -o $@ $<
 
 ooStringTest: ooStringTest.o ooString.o ooCollection.o
 	$(CC) -o $@ $^
